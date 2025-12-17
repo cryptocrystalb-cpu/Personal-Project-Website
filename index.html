@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookie Selection Studio</title>
+  <style>
+    :root{
+      --bg:#fff8f2;
+      --text:#2b2b2b;
+      --accent:#d26a35;
+      --accent-2:#8a4a2b;
+      --card:#ffffff;
+      --muted:#6b6b6b;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    header{
+      background:linear-gradient(120deg, var(--accent), var(--accent-2));
+      color:#fff;
+      padding:56px 20px;
+      text-align:center;
+    }
+    header h1{margin:0 0 8px;font-size:2.2rem}
+    header p{margin:0;font-size:1rem;opacity:.95}
+    .content{
+      max-width:1000px;
+      margin:0 auto;
+      padding:28px 20px 60px;
+    }
+    section{
+      margin:24px 0;
+      background:var(--card);
+      border-radius:14px;
+      box-shadow:0 8px 20px rgba(0,0,0,.06);
+      overflow:hidden;
+      border:1px solid rgba(0,0,0,.06);
+    }
+    section header{
+      background:transparent;
+      color:inherit;
+      padding:20px;
+      text-align:left;
+    }
+    section header h2{
+      margin:0 0 6px;
+      font-size:1.4rem;
+      color:var(--accent-2);
+    }
+    section header p{margin:0;color:var(--muted)}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:16px;
+      padding:20px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:12px;
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px;font-size:1.05rem;color:var(--accent)}
+    .card p{margin:0;color:var(--muted);font-size:.95rem}
+    details{
+      background:#fff;
+      border-top:1px solid rgba(0,0,0,.08);
+      padding:0 20px 10px;
+    }
+    summary{
+      cursor:pointer;
+      padding:14px 0;
+      font-weight:600;
+      color:var(--accent-2);
+      list-style:none;
+    }
+    summary::marker{display:none}
+    .ingredients, .steps{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:4px;
+      margin:10px 0 14px;
+    }
+    .ingredients li, .steps li{
+      margin-left:18px;
+    }
+    .meta{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:.9rem;
+      margin:8px 0 12px;
+    }
+    .badge{
+      display:inline-block;
+      background:rgba(210,106,53,.12);
+      color:var(--accent-2);
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:.85rem;
+      border:1px solid rgba(210,106,53,.3);
+    }
+    footer{
+      text-align:center;
+      color:var(--muted);
+      padding:26px 20px 40px;
+    }
+    .note{
+      background:#fff7ea;
+      border-left:4px solid var(--accent);
+      padding:12px 14px;
+      margin:10px 20px 20px;
+      border-radius:8px;
+      color:#5a492f;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#141212;
+        --text:#f5f3f0;
+        --card:#1c1a1a;
+        --muted:#b9b4ad;
+      }
+      section{border-color:rgba(255,255,255,.08)}
+      .card{background:var(--card)}
+      details{background:var(--card)}
+      .note{background:#2a241f;color:#d8d0c5}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cookie Selection Studio</h1>
+    <p>Learn to make delicious desserts, featuring some cookie recipes.</p>
+  </header>
+<section>
+  <h2>Cookie Selection Studio</h2>
+  <h3>November* 11 - 5 - 2025 / By Eliyah Hopson</h3>
+  <h4><p>My love for desserts started back in 8th grade, when I dreamed of creating my own cakes with fondant, cookies, and other sweet treats that stood out from the ordinary. Over the years, I experimented with recipes like Oreo cake, chocolate chip cookies with marshmallows, and white-and-dark chocolate chip cookies. Each creation fueled my excitement to keep learning and growing.
+One of the most memorable experiences was helping my godmother in the kitchen of the art museum in South Carolina. She was preparing cupcakes and desserts in elegant cups for an event, and she invited me to join her. On my very first try at icing and preparing cupcakes, I discovered how natural it felt—and how much joy it brought me to contribute. My godmother, who built her own dessert business and connected with so many people through her craft, inspired me to pursue my own path in baking. I’ve always wanted to be great at making desserts like her, but in my own unique way.</p>
+<p>Here is some of the Cookies I created myself: <a href="https://docs.google.com/document/d/1g8L6OxXMfcAWdp7zm3p_EHkYbIpDHLaTM379GI5d1VE/edit?tab=t.0">Product's Made Overtime</a></p> 
+
+<p>I created this website to share that passion with the world. To me, desserts are more than food—they’re art, comfort, and joy. Through step-by-step demonstrations, photos, and clear instructions, I want to empower people who may feel intimidated by baking. This site is a learning hub where anyone can gain confidence, whether they’re making simple cookies or elaborate cakes. Each recipe is a canvas where I combine flavors, visuals, and storytelling, inviting others to join in the creativity.
+My goal is to spread joy by showing how easy and fun it can be to make something sweet. I believe desserts can brighten someone’s day, encourage them to try something new, and remind them of life’s simple pleasures. Over time, this website also becomes a way to build my personal brand—showcasing my creativity and expertise, opening doors to collaborations, sponsorships, or even a future cookbook.
+Most importantly, this website transforms my passion into possibility. It’s the first step toward something bigger: workshops, a dessert-focused business, or simply a community of dessert lovers who inspire each other. Food brings people together, and desserts often take center stage in celebrations. By sharing my journey here, I hope to build a space where we can connect, learn, and celebrate the art of desserts together.</p></h4>
+</section>
+ <section id="cookies">
+      <header>
+        <h2>25 Cookie Recipes</h2>
+        <p>Each recipe includes ingredients, timing, and clear steps.</p>
+      </header>
+
+      <!-- 1. Chocolate Chip Cookies -->
+      <details>
+        <summary>1) Chocolate chip cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2¼ cups all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>¾ tsp fine salt</li>
+          <li>1 cup unsalted butter, room temp</li>
+          <li>¾ cup granulated sugar</li>
+          <li>¾ cup brown sugar</li>
+          <li>2 large eggs</li>
+          <li>2 cups semi-sweet chocolate chips</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 375°F. Line two sheet pans.</li>
+          <li>Whisk flour, baking soda, and salt.</li>
+          <li>Cream butter and sugars until light, 2–3 minutes.</li>
+          <li>Beat in eggs one at a time.</li>
+          <li>Mix in dry ingredients just until combined.</li>
+          <li>Fold in chocolate chips.</li>
+          <li>Scoop 1½ tbsp portions, 2 inches apart.</li>
+          <li>Bake 9–11 minutes until edges are golden.</li>
+          <li>Cool 5 minutes on pan, then on racks.</li>
+        </ol>
+      </details>
+
+      <!-- 2. Oatmeal Raisin -->
+      <details>
+        <summary>2) Oatmeal raisin cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>1 tsp cinnamon</li>
+          <li>½ tsp salt</li>
+          <li>1 cup unsalted butter, room temp</li>
+          <li>1 cup brown sugar</li>
+          <li>½ cup granulated sugar</li>
+          <li>2 large eggs</li>
+          <li>3 cups old-fashioned oats</li>
+          <li>1 cup raisins</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F. Line pans.</li>
+          <li>Whisk flour, baking soda, cinnamon, and salt.</li>
+          <li>Cream butter and sugars; add eggs.</li>
+          <li>Mix in dry ingredients, then oats.</li>
+          <li>Fold in raisins.</li>
+          <li>Scoop; flatten slightly.</li>
+          <li>Bake 11–13 minutes until set at edges.</li>
+          <li>Cool on racks.</li>
+        </ol>
+      </details>
+
+      <!-- 3. Peanut Butter -->
+      <details>
+        <summary>3) Peanut butter cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10 min</span>
+          <span class="badge">Yield ~30</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>1 cup peanut butter (creamy)</li>
+          <li>½ cup unsalted butter, room temp</li>
+          <li>1 cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F. Line pans.</li>
+          <li>Cream butter, peanut butter, and sugar.</li>
+          <li>Beat in egg and vanilla.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Roll 1 tbsp balls; crisscross fork on top.</li>
+          <li>Bake 9–11 minutes; centers should look soft.</li>
+          <li>Cool and set 10 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 4. Sugar Cookies -->
+      <details>
+        <summary>4) Classic sugar cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 8–10 min</span>
+          <span class="badge">Yield ~36</span>
+        </div>
+        <ul class="ingredients">
+          <li>2¾ cups all-purpose flour</li>
+          <li>1 tsp baking powder</li>
+          <li>½ tsp salt</li>
+          <li>1 cup unsalted butter, room temp</li>
+          <li>1 cup granulated sugar</li>
+          <li>1 large egg</li>
+          <li>1½ tsp vanilla</li>
+          <li>2 tbsp milk</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Whisk flour, baking powder, salt.</li>
+          <li>Cream butter and sugar; add egg and vanilla.</li>
+          <li>Mix in dry ingredients, then milk.</li>
+          <li>Roll to ¼-inch; cut shapes.</li>
+          <li>Bake 8–10 minutes; edges pale golden.</li>
+          <li>Cool; decorate if desired.</li>
+        </ol>
+      </details>
+
+      <!-- 5. Snickerdoodles -->
+      <details>
+        <summary>5) Snickerdoodles</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10 min</span>
+          <span class="badge">Yield ~30</span>
+        </div>
+        <ul class="ingredients">
+          <li>2¾ cups all-purpose flour</li>
+          <li>2 tsp cream of tartar</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>1 cup unsalted butter</li>
+          <li>1½ cups granulated sugar</li>
+          <li>2 large eggs</li>
+          <li>2 tbsp sugar + 2 tsp cinnamon (coating)</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 375°F.</li>
+          <li>Whisk flour, cream of tartar, soda, salt.</li>
+          <li>Cream butter and sugar; add eggs.</li>
+          <li>Mix dry into wet.</li>
+          <li>Roll balls; coat in cinnamon sugar.</li>
+          <li>Bake 9–11 minutes; cracked tops.</li>
+        </ol>
+      </details>
+
+      <!-- 6. Double Chocolate -->
+      <details>
+        <summary>6) Double chocolate cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1½ cups all-purpose flour</li>
+          <li>½ cup cocoa powder</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>1 cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup chocolate chips</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Whisk flour, cocoa, soda, salt.</li>
+          <li>Cream butter and sugar; add egg, vanilla.</li>
+          <li>Mix in dry; fold in chips.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 7. Gingerbread -->
+      <details>
+        <summary>7) Gingerbread cookies</summary>
+        <div class="meta">
+          <span class="badge">Chill 1 hr</span>
+          <span class="badge">Bake 8–10 min</span>
+          <span class="badge">Yield ~40</span>
+        </div>
+        <ul class="ingredients">
+          <li>3 cups all-purpose flour</li>
+          <li>2 tsp ground ginger</li>
+          <li>1 tsp cinnamon</li>
+          <li>¼ tsp cloves</li>
+          <li>½ tsp salt</li>
+          <li>¾ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>½ cup molasses</li>
+        </ul>
+        <ol class="steps">
+          <li>Whisk dry spices with flour and salt.</li>
+          <li>Cream butter and sugar; add egg, molasses.</li>
+          <li>Mix in dry; chill 1 hour.</li>
+          <li>Roll ¼-inch; cut shapes.</li>
+          <li>Bake 8–10 minutes at 350°F.</li>
+        </ol>
+      </details>
+
+      <!-- 8. Shortbread -->
+      <details>
+        <summary>8) Butter shortbread</summary>
+        <div class="meta">
+          <span class="badge">Prep 10 min</span>
+          <span class="badge">Bake 25–30 min</span>
+          <span class="badge">Yield 1 pan</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>½ cup rice flour or cornstarch</li>
+          <li>¼ tsp salt</li>
+          <li>1 cup unsalted butter</li>
+          <li>½ cup granulated sugar</li>
+          <li>1 tsp vanilla</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 325°F.</li>
+          <li>Beat butter, sugar, vanilla until creamy.</li>
+          <li>Mix in flours and salt.</li>
+          <li>Press into lined 9-inch pan; dock with fork.</li>
+          <li>Bake 25–30 minutes until lightly golden.</li>
+          <li>Cut while warm; cool fully.</li>
+        </ol>
+      </details>
+
+      <!-- 9. White Chocolate Macadamia -->
+      <details>
+        <summary>9) White chocolate macadamia cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>¾ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>½ cup granulated sugar</li>
+          <li>1 large egg + 1 yolk</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup white chocolate chips</li>
+          <li>¾ cup macadamia nuts, chopped</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugars; add egg, yolk, vanilla.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Fold in chips and nuts.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 10. Molasses -->
+      <details>
+        <summary>10) Soft molasses cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 9–11 min</span>
+          <span class="badge">Yield ~28</span>
+        </div>
+        <ul class="ingredients">
+          <li>2¼ cups all-purpose flour</li>
+          <li>2 tsp ginger</li>
+          <li>1 tsp cinnamon</li>
+          <li>½ tsp cloves</li>
+          <li>2 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>¾ cup unsalted butter</li>
+          <li>1 cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>¼ cup molasses</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and molasses.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Roll balls; coat in sugar.</li>
+          <li>Bake 9–11 minutes; crackly tops.</li>
+        </ol>
+      </details>
+
+      <!-- 11. Pumpkin Spice -->
+      <details>
+        <summary>11) Pumpkin spice cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 12–14 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>1 tsp baking powder</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>1½ tsp pumpkin pie spice</li>
+          <li>½ cup unsalted butter</li>
+          <li>1 cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 cup pumpkin puree</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and pumpkin.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Scoop; bake 12–14 minutes; soft set.</li>
+        </ol>
+      </details>
+
+      <!-- 12. Red Velvet -->
+      <details>
+        <summary>12) Red velvet cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1½ cups all-purpose flour</li>
+          <li>¼ cup cocoa powder</li>
+          <li>1 tsp baking soda</li>
+          <li>¼ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup granulated sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>1 tbsp red food coloring</li>
+          <li>½ cup white chocolate chips (optional)</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, vanilla, coloring.</li>
+          <li>Mix in dry; fold chips if using.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 13. Almond -->
+      <details>
+        <summary>13) Almond cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 12 min</span>
+          <span class="badge">Yield ~30</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups almond flour</li>
+          <li>½ cup all-purpose flour</li>
+          <li>½ tsp baking powder</li>
+          <li>¼ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup powdered sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp almond extract</li>
+          <li>Sliced almonds for topping</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 325°F.</li>
+          <li>Cream butter and sugar; add egg and extract.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Scoop; press sliced almonds on top.</li>
+          <li>Bake 12–14 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 14. Lemon -->
+      <details>
+        <summary>14) Lemon crinkle cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>1 tsp baking powder</li>
+          <li>¼ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>1 cup granulated sugar</li>
+          <li>1 large egg</li>
+          <li>Zest of 1 lemon</li>
+          <li>2 tbsp lemon juice</li>
+          <li>½ cup powdered sugar (for rolling)</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, zest, juice.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Roll balls in powdered sugar.</li>
+          <li>Bake 10–12 minutes; crinkled tops.</li>
+        </ol>
+      </details>
+
+      <!-- 15. Coconut Macaroons -->
+      <details>
+        <summary>15) Coconut macaroons</summary>
+        <div class="meta">
+          <span class="badge">Prep 10 min</span>
+          <span class="badge">Bake 20–22 min</span>
+          <span class="badge">Yield ~20</span>
+        </div>
+        <ul class="ingredients">
+          <li>3 cups sweetened shredded coconut</li>
+          <li>¾ cup sweetened condensed milk</li>
+          <li>1 tsp vanilla</li>
+          <li>2 large egg whites, beaten to soft peaks</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 325°F.</li>
+          <li>Combine coconut, condensed milk, vanilla.</li>
+          <li>Fold in whipped egg whites.</li>
+          <li>Scoop mounds; bake 20–22 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 16. Brownie Cookies -->
+      <details>
+        <summary>16) Brownie cookies (crackly)</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1 cup dark chocolate chips</li>
+          <li>¼ cup butter</li>
+          <li>¾ cup sugar</li>
+          <li>2 large eggs</li>
+          <li>1 tsp vanilla</li>
+          <li>¾ cup all-purpose flour</li>
+          <li>¼ cup cocoa powder</li>
+          <li>½ tsp baking powder</li>
+          <li>¼ tsp salt</li>
+        </ul>
+        <ol class="steps">
+          <li>Melt chocolate and butter; cool slightly.</li>
+          <li>Beat sugar and eggs until thick, 2 minutes.</li>
+          <li>Fold in melted chocolate and vanilla.</li>
+          <li>Mix in sifted dry ingredients.</li>
+          <li>Rest batter 10 minutes; scoop.</li>
+          <li>Bake 10–12 minutes at 350°F.</li>
+        </ol>
+      </details>
+
+      <!-- 17. Mint Chocolate -->
+      <details>
+        <summary>17) Mint chocolate cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>¼ cup cocoa powder</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup granulated sugar</li>
+          <li>1 large egg</li>
+          <li>½ tsp peppermint extract</li>
+          <li>1 cup chocolate chips</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, peppermint.</li>
+          <li>Mix in dry; fold chips.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 18. S'mores -->
+      <details>
+        <summary>18) S’mores cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~20</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup chocolate chips</li>
+          <li>¾ cup mini marshmallows</li>
+          <li>½ cup graham cracker pieces</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, vanilla.</li>
+          <li>Mix in dry; fold chips, marshmallows, grahams.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 19. Cranberry White Chocolate -->
+      <details>
+        <summary>19) Cranberry white chocolate cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>¾ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg + 1 yolk</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup white chocolate chips</li>
+          <li>¾ cup dried cranberries</li>
+          <li>Zest of ½ orange (optional)</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, yolk, vanilla.</li>
+          <li>Mix in dry; fold chips and cranberries.</li>
+          <li>Bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 20. Caramel -->
+      <details>
+        <summary>20) Salted caramel cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 25 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~20</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>¾ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>20 soft caramels</li>
+          <li>Flaky salt</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and vanilla.</li>
+          <li>Mix in dry ingredients.</li>
+          <li>Wrap dough around caramel pieces.</li>
+          <li>Bake 10–12 minutes; sprinkle flaky salt.</li>
+        </ol>
+      </details>
+
+      <!-- 21. Banana -->
+      <details>
+        <summary>21) Banana chocolate chip cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 ripe banana, mashed</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup chocolate chips</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, banana, vanilla.</li>
+          <li>Mix in dry; fold chips.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 22. Chai Spice -->
+      <details>
+        <summary>22) Chai spice cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 20 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>1½ tsp chai spice (cinnamon, cardamom, ginger)</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and vanilla.</li>
+          <li>Mix in dry and chai spice.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 23. Matcha -->
+      <details>
+        <summary>23) Matcha white chocolate cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>1¾ cups all-purpose flour</li>
+          <li>1½ tbsp culinary matcha</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup granulated sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>1 cup white chocolate chips</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and vanilla.</li>
+          <li>Mix in dry; fold chips.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 24. Nutella -->
+      <details>
+        <summary>24) Nutella swirl cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>½ tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>¾ cup Nutella</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg and vanilla.</li>
+          <li>Mix in dry; gently swirl Nutella through dough.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+
+      <!-- 25. Espresso -->
+      <details>
+        <summary>25) Espresso chocolate chunk cookies</summary>
+        <div class="meta">
+          <span class="badge">Prep 15 min</span>
+          <span class="badge">Bake 10–12 min</span>
+          <span class="badge">Yield ~24</span>
+        </div>
+        <ul class="ingredients">
+          <li>2 cups all-purpose flour</li>
+          <li>1 tsp baking soda</li>
+          <li>½ tsp salt</li>
+          <li>½ cup unsalted butter</li>
+          <li>¾ cup brown sugar</li>
+          <li>1 large egg</li>
+          <li>1 tsp vanilla</li>
+          <li>1 tbsp instant espresso powder</li>
+          <li>1½ cups chocolate chunks</li>
+        </ul>
+        <ol class="steps">
+          <li>Heat oven to 350°F.</li>
+          <li>Cream butter and sugar; add egg, vanilla, espresso.</li>
+          <li>Mix in dry; fold chunks.</li>
+          <li>Scoop; bake 10–12 minutes.</li>
+        </ol>
+      </details>
+    </section>
+
+    <section>
+      <header>
+        <h2>Baking basics and troubleshooting</h2>
+        <p>Quick fixes for spread, texture, and doneness.</p>
+      </header>
+      <div class="grid">
+        <div class="card">
+          <h3>Spread too much</h3>
+          <p>Chill dough 30–60 min, use parchment, and ensure butter is just soft, not melted.</p>
+        </div>
+        <div class="card">
+          <h3>Too cakey</h3>
+          <p>Reduce flour slightly; avoid overmixing; use more brown sugar for chew.</p>
+        </div>
+        <div class="card">
+          <h3>Underdone centers</h3>
+          <p>Bake 1–2 min longer or cool on pan to carryover—edges should be set, centers just soft.</p>
+        </div>
+        <div class="card">
+          <h3>Inconsistent batches</h3>
+          <p>Weigh ingredients, rotate pans halfway, and keep dough portions uniform.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+     — Personal Project
+  </footer>
+</body>
+</html>
